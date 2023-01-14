@@ -1,0 +1,32 @@
+.mantine-Modal-header {
+    margin: 0;
+}
+
+.mantine-Modal-title {
+    display: none;
+}
+
+.mantine-Modal-close {
+    position: absolute;
+    top: 10px;
+    background-color: #B8D1CD;
+    color: #006555;
+    box-shadow: 0 5px 6px rgba(0, 101, 85, 0.1);
+    border-radius: 20px;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.mantine-Modal-close:hover{
+    background-color: #B8D1CD;
+}
+
+.mantine-Modal-close:focus{
+    border-color: #B8D1CD;
+}
+
+.mantine-Modal-close svg {
+    width: 24px;
+    height: 24px;
+}

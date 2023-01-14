@@ -1,0 +1,8 @@
+.MuiSvgIcon-fontSizeMedium{
+    font-size: 1.5em !important;
+}
+@media (max-width: 600px) {
+    .MuiSvgIcon-fontSizeMedium{
+        font-size: 1em !important;
+    }
+}

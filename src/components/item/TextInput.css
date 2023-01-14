@@ -1,0 +1,12 @@
+.mantine-TextInput-input{
+    background-color: #FFE6E9;
+    color: #FFB3BC;
+}
+
+.mantine-TextInput-input::placeholder{
+    color: #FFB3BC;
+}
+
+.mantine-TextInput-input:focus{
+    border-color: #FFB3BC;
+}
