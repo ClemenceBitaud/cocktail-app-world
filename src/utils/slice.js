@@ -12,7 +12,7 @@ const slice = createSlice({
             state.favorites.push(action.payload.cocktail);
         },
         removeFavorite(state, action){
-            state.favorites = state.favorites.filter(cocktail => cocktail.idDrink !== action.payload.cocktail.idDrink);
+            state.favorites = state.favorites.filter(cocktail => cocktail._id !== action.payload.cocktail._id);
         }
     }
 });

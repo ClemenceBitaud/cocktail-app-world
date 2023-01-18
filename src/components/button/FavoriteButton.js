@@ -30,7 +30,7 @@ const FavoriteButton = ({cocktail}) => {
 
     const handleFavoris = (cocktail) => {
         if (cocktail != null){
-            if (favorites.map(c => c.idDrink === cocktail.idDrink).includes(true)){
+            if (favorites.map(c => c._id === cocktail._id).includes(true)){
                 dispatch(
                     removeFavorite({
                         cocktail:cocktail
@@ -49,7 +49,7 @@ const FavoriteButton = ({cocktail}) => {
     const renderedIconFav = () => {
         var sourceIcon = <FavoriteBorderIcon sx={{ color: '#FFB3BC' }}/>;
         favorites.map(cocktailFav => {
-            if (cocktailFav.idDrink === cocktail.idDrink){
+            if (cocktailFav._id === cocktail._id){
                 sourceIcon = <FavoriteIcon sx={{ color: '#FFB3BC' }}/>
             }
             return sourceIcon

@@ -69,15 +69,15 @@ const Home = () => {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")
+        fetch("http://localhost:3000/api/drinks")
             .then((res) => {
                 return res.json();
             })
             .then((data) => {
                 setIsLoaded(true);
-                const drinks = data.drinks;
-                setCocktails(drinks.slice(0,15));
-                localStorage.setItem("alcoholic-cocktails", JSON.stringify(drinks));
+                console.log(data);
+                setCocktails(data.slice(0,15));
+                localStorage.setItem("cocktails", JSON.stringify(data));
 
             }, (error) => {
                 setIsLoaded(true);

@@ -49,6 +49,10 @@ const linksMockdata = [
     {
         label: 'Random',
         linkTo: '/random'
+    },
+    {
+        label: 'Pokemon',
+        linkTo: '/pokemon'
     }
 ];
 

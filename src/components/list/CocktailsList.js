@@ -26,7 +26,7 @@ const CocktailsList = ({cocktails, error, isLoaded}) => {
         return(
             <Flex wrap="wrap" justify="center">
                 {cocktails.map(cocktail => (
-                    <CocktailCard cocktail={cocktail} key={cocktail.strDrink}/>
+                    <CocktailCard cocktail={cocktail} key={cocktail._id}/>
                 ))}
             </Flex>
         )

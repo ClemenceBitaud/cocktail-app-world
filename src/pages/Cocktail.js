@@ -38,7 +38,7 @@ const Cocktail = () => {
 
     useEffect(() => {
         if (search === undefined){
-            const saved = JSON.parse(localStorage.getItem("alcoholic-cocktails"));
+            const saved = JSON.parse(localStorage.getItem("cocktails"));
             setCocktails(saved);
             setIsLoaded(true);
 

@@ -42,26 +42,12 @@ const CocktailCard = ({cocktail}) => {
 
     const { classes} = useStyles();
     const [opened, setOpened] = useState(false);
-    const [cCocktail, setcCocktail] = useState({});
-
-    const handleCocktailDetail = (idCocktail) => {
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idCocktail}`)
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => {
-                setcCocktail(data.drinks[0]);
-            }, (error) => {
-                console.log(error)
-            });
-    }
 
     return(
         <Flex
             justify="center"
             className={classes.card}
             onClick={() =>{
-                handleCocktailDetail(cocktail.idDrink)
                 setOpened(true)
             }}
         >
@@ -69,8 +55,8 @@ const CocktailCard = ({cocktail}) => {
                 direction="column"
                 align="center"
             >
-                <img src={cocktail.strDrinkThumb} className={classes.cocktailImage} alt="cocktail"/>
-                <Text align="center" size={"sm"} className={classes.text}>{cocktail.strDrink}</Text>
+                {/*<img src={cocktail.strDrinkThumb} className={classes.cocktailImage} alt="cocktail"/>*/}
+                <Text align="center" size={"sm"} className={classes.text}>{cocktail.name}</Text>
                 <Flex>
                     <FavoriteButton cocktail={cocktail}/>
                 </Flex>
@@ -80,7 +66,7 @@ const CocktailCard = ({cocktail}) => {
                 padding={0}
                 opened={opened}
                 onClose={() => setOpened(false)}>
-                <CocktailDetailCard cocktail={cCocktail}/>
+                <CocktailDetailCard cocktail={cocktail}/>
             </Modal>
         </Flex>
 
