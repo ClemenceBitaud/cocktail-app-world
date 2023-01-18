@@ -43,14 +43,13 @@ const Cocktail = () => {
             setIsLoaded(true);
 
         }else{
-            fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`)
+            fetch(`http://localhost:3000/api/drinks/search/${search}`)
                 .then((res) => {
                     return res.json();
                 })
                 .then((data) => {
                     setIsLoaded(true);
-                    const drinks = data.drinks;
-                    setCocktails(drinks);
+                    setCocktails(data);
 
                 }, (error) => {
                     setIsLoaded(true);
