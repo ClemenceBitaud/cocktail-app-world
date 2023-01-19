@@ -4,6 +4,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './FavoriteButton.css';
 import {createStyles, Flex} from "@mantine/core";
+import {useEffect, useState} from "react";
 
 const useStyles = createStyles((theme) => ({
 
@@ -24,24 +25,61 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const FavoriteButton = ({cocktail}) => {
-    const favorites = useSelector(favoriteCocktails);
     const dispatch = useDispatch();
     const { classes} = useStyles();
+    const [favorites, setFavorites] = useState([]);
+    const userId = window.sessionStorage.getItem('userId');
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/api/auth/${userId}`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'email' : window.sessionStorage.getItem('userEmail'),
+                'authorization' : window.sessionStorage.getItem('userToken')
+            }
+        })
+            .then(response => response.json())
+            .then(response => {
+                setFavorites(response.favorites)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }, [userId]);
 
     const handleFavoris = (cocktail) => {
         if (cocktail != null){
             if (favorites.map(c => c._id === cocktail._id).includes(true)){
-                dispatch(
-                    removeFavorite({
-                        cocktail:cocktail
-                    },)
-                )
+                console.log(cocktail._id);
+                fetch(`http://localhost:3000/api/auth/${userId}/favorite/${cocktail._id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'email' : window.sessionStorage.getItem('userEmail'),
+                        'authorization' : window.sessionStorage.getItem('userToken')
+                    }
+                })
+                    .then(response => response.json())
+                    .catch((error) => {
+                        console.log(error);
+                    })
             }else{
-                dispatch(
-                    addFavorite({
-                        cocktail:cocktail
-                    },)
-                )
+                fetch(`http://localhost:3000/api/auth/${userId}/favorite`, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'email' : window.sessionStorage.getItem('userEmail'),
+                        'authorization' : window.sessionStorage.getItem('userToken')
+                    },
+                    body: JSON.stringify({ "drinkId":cocktail._id})
+                })
+                    .then(response => response.json())
+                    .catch((error) => {
+                        console.log(error);
+                    })
             }
         }
     };

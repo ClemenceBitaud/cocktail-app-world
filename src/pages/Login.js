@@ -57,6 +57,7 @@ const Login = () => {
                 const user = response.user;
                 const token = response.token;
                 window.sessionStorage.setItem('userEmail', user.email);
+                window.sessionStorage.setItem('userId', user._id);
                 window.sessionStorage.setItem('userToken', token);
                 navigate("/home");
             })
