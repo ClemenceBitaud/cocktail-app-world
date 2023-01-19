@@ -36,6 +36,13 @@ const useStyles = createStyles((theme) => ({
         [`@media (max-width: 600px)`]: {
             width: '90%',
         },
+    },
+
+    monsterRandom : {
+        width: 15,
+        position: "absolute",
+        left: '370px',
+        bottom: '20px'
     }
 }));
 
@@ -73,16 +80,15 @@ const Random = () => {
     return(
         <Box className={classes.main}>
             <Header activeLink={activeLink}/>
-            <ScrollArea style={{ height: height - 90 }}>
-                <Flex direction="column" align="center">
-                    <Box className={classes.retroButton}>
-                        <RetroButton label={"Play again !"} handleClick={handleRandomApi}/>
-                    </Box>
-                    <Box className={classes.cocktailCard}>
-                        <CocktailDetailCard cocktail={cocktail}/>
-                    </Box>
-                </Flex>
-            </ScrollArea>
+            <Flex direction="column" align="center">
+                <Box className={classes.retroButton}>
+                    <RetroButton label={"Play again !"} handleClick={handleRandomApi}/>
+                </Box>
+                <Box className={classes.cocktailCard}>
+                    <CocktailDetailCard cocktail={cocktail}/>
+                </Box>
+            </Flex>
+            <img className={classes.monsterRandom} src="https://app.pixelencounter.com/api/basic/monsters/50"/>
             {width <= 600 ? <BottomNavBar activeLink={activeLink}/> : null}
         </Box>
     )

@@ -10,6 +10,13 @@ const useStyles = createStyles(() => ({
         height:40,
         width: 40
     },
+
+    monster : {
+        width: 15,
+        position: "absolute",
+        right: '5px',
+        top: '5px'
+    }
 }));
 
 const HeaderWithLogoNavbarTextInput = ({activeLink}) => {
@@ -20,6 +27,7 @@ const HeaderWithLogoNavbarTextInput = ({activeLink}) => {
             <img src={image} className={classes.logo} alt="logo"/>
             <Navbar activeLink={activeLink}/>
             <CustomTextInput/>
+            <img className={classes.monster} src="https://app.pixelencounter.com/api/basic/monsters/66"/>
         </Flex>
     )
 }

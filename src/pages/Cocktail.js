@@ -24,6 +24,13 @@ const useStyles = createStyles((theme) => ({
     section : {
         marginTop: theme.spacing.xl
     },
+
+    monster : {
+        width: 15,
+        position: "absolute",
+        left: '50%',
+        bottom: '40px'
+    }
 }));
 
 const Cocktail = () => {
@@ -137,6 +144,7 @@ const Cocktail = () => {
             {width <= 600 ? <ScrollArea style={{ height: height - 90 }}><CocktailsList cocktails={cocktails} error={error} isLoaded={isLoaded}/></ScrollArea>
                 : <CocktailsList cocktails={cocktails} error={error} isLoaded={isLoaded}/>
             }
+            <img className={classes.monster} src="https://app.pixelencounter.com/api/basic/monsters/59"/>
             {width <= 600 ? <BottomNavBar activeLink={activeLink}/> : null}
         </div>
     )

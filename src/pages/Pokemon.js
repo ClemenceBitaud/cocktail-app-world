@@ -23,6 +23,13 @@ const useStyles = createStyles((theme) => ({
     section : {
         marginTop: theme.spacing.md
     },
+
+    monsterPokemon : {
+        width: 15,
+        position: "absolute",
+        right: '230px',
+        bottom: '100px'
+    }
 }));
 
 const PokemonList = ({pokemons}) => {
@@ -72,6 +79,7 @@ const Pokemon = () => {
                 </ScrollArea>
                 : <PokemonList pokemons={pokemons}/>
             }
+            <img className={classes.monsterPokemon} src="https://app.pixelencounter.com/api/basic/monsters/97"/>
             {width <= 600 ? <BottomNavBar activeLink={activeLink}/> : null}
         </div>
 

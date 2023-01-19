@@ -22,7 +22,7 @@ const useStyles = createStyles((theme) => ({
 
     measureText : {
         marginRight: theme.spacing.xs
-    }
+    },
 
 }));
 
