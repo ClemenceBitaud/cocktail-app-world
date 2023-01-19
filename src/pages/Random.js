@@ -82,7 +82,7 @@ const Random = () => {
             <Header activeLink={activeLink}/>
             <Flex direction="column" align="center">
                 <Box className={classes.retroButton}>
-                    <RetroButton label={"Play again !"} handleClick={handleRandomApi}/>
+                    <RetroButton label={"Relancer !"} handleClick={handleRandomApi}/>
                 </Box>
                 <Box className={classes.cocktailCard}>
                     <CocktailDetailCard cocktail={cocktail}/>

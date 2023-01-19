@@ -33,9 +33,9 @@ const InfoSeeMoreAndList = ({cocktails, error, isLoaded}) => {
         <Box>
             <Flex direction={{ base: 'column', md:'row'}} className={classes.section}>
                 <InformationSection
-                    title={"Welcome in World of Cocktails"}
-                    text={"No idea for an aperitif or a party? A cocktail in mind but you don't know how to make it?"}
-                    buttonText={"Find a cocktail"}
+                    title={"Bienvenue dans le monde des cocktails !"}
+                    text={"Aucune idée pour un apéritif ou une fête ? Un cocktail en tête mais vous ne savez pas comment le réaliser ? Pas de boisson originale pour votre SAM ?"}
+                    buttonText={"Trouver un cocktail"}
                     linkTo={"/cocktail"}
                     color={"#FFB3BC"}
                     isBorder={false}
@@ -44,8 +44,8 @@ const InfoSeeMoreAndList = ({cocktails, error, isLoaded}) => {
                 />
                 <InformationSection
                     title={""}
-                    text={"Want to spice things up? Let us choose for you!"}
-                    buttonText={"Start the random search !"}
+                    text={"Envie de pimenter les choses ? Laissez-nous choisir pour vous !"}
+                    buttonText={"Démarrer la recherche aléatoire !"}
                     linkTo={"/random"}
                     color={"#B8D1CD"}
                     isBorder={true}

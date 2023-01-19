@@ -20,7 +20,7 @@ const TitleSeeMore = ({title, linkTo}) => {
     return(
         <Flex direction="row" align="center" justify="space-between" className={classes.section}>
             <Title size="h3">{title}</Title>
-            <a href={linkTo} className={classes.link}>See more</a>
+            <a href={linkTo} className={classes.link}>Voir plus</a>
         </Flex>
     )
 }

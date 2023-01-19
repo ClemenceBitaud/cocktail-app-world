@@ -35,7 +35,7 @@ const useStyles = createStyles((theme) => ({
 
 const linksMockdata = [
     {
-        label:'Home',
+        label:'Accueil',
         linkTo: '/home'
     },
     {
@@ -43,11 +43,11 @@ const linksMockdata = [
         linkTo: '/cocktail'
     },
     {
-        label:'Favorite',
+        label:'Favoris',
         linkTo: '/favorite'
     },
     {
-        label: 'Random',
+        label: 'Aléatoir',
         linkTo: '/random'
     },
     {
@@ -60,7 +60,6 @@ const Navbar = ({activeLink}) => {
 
     const navigate = useNavigate();
     const { classes, cx } = useStyles();
-    // const [activeLink, setActiveLink] = useState('Home');
 
     const links = linksMockdata.map((link) => (
         <a

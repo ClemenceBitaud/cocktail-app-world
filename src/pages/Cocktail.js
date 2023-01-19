@@ -121,8 +121,8 @@ const Cocktail = () => {
         <div className={classes.main}>
             <Header activeLink={activeLink}/>
             <Select
-                label="Search by type"
-                placeholder="Pick one"
+                label="Rechercher par type"
+                placeholder="Choisissez-en un"
                 value={typeValue}
                 onChange={handleTypeChange}
                 data={[
@@ -131,12 +131,12 @@ const Cocktail = () => {
             ]}
             />
             <Select
-                label="Search by category"
-                placeholder="Pick one"
+                label="Rechercher par catégorie"
+                placeholder="Choisissez-en un"
                 value={categoryValue}
                 onChange={handleCategoryChange}
                 data={[
-                    {value: '63c2b7f7b7f2f44a1e345db7', label: 'Alcohol-free'},
+                    {value: '63c2b7f7b7f2f44a1e345db7', label: 'Sans alcool'},
                     {value: '63c2be44b7f2f44a1e345dc4', label:'Beach Party'},
                     {value: '63c9656a334587f7fc0e361b', label:'Populaire'},
                 ]}

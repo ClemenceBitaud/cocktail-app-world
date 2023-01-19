@@ -22,9 +22,9 @@ const CustomTextInput = () => {
     return (
         <TextInput
             value={message}
-            placeholder="Search a cocktail"
+            placeholder="Rechercher un cocktail"
             radius={20}
-            aria-label="Search a cocktail"
+            aria-label="Rechercher un cocktail"
             variant="filled"
             rightSection={<SearchIcon sx={{ color: '#FFB3BC' }}/>}
             onChange={handleChange}
