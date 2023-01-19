@@ -42,7 +42,7 @@ const CocktailDetailCard = ({cocktail}) => {
 
     return(
         <Box>
-            <img className={classes.image} src={cocktail.strDrinkThumb} alt="detail cocktail"/>
+            <img className={classes.image} src={cocktail.image} alt="detail cocktail"/>
             <Flex className={classes.content} direction="column">
                 <Flex justify="space-between">
                     <Title size={"h3"}>{cocktail.name}</Title>

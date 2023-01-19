@@ -55,7 +55,7 @@ const CocktailCard = ({cocktail}) => {
                 direction="column"
                 align="center"
             >
-                {/*<img src={cocktail.strDrinkThumb} className={classes.cocktailImage} alt="cocktail"/>*/}
+                <img src={cocktail.image} className={classes.cocktailImage} alt="cocktail"/>
                 <Text align="center" size={"sm"} className={classes.text}>{cocktail.name}</Text>
                 <Flex>
                     <FavoriteButton cocktail={cocktail}/>

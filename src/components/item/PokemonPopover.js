@@ -16,6 +16,19 @@ const useStyles = createStyles((theme) => ({
         },
     },
 
+    cocktailImage : {
+        width: 119,
+        height: 144,
+        objectFit: "cover",
+        borderRadius: 15,
+
+        // SMARTPHONE
+        [`@media (max-width: 600px)`]: {
+            width: 64,
+            height: 77,
+        },
+    },
+
     pokemonImage : {
         width:100,
         height:100
@@ -41,7 +54,7 @@ const PokemonPopover = ({pokemon}) => {
                         direction="column"
                         align="center"
                     >
-                        {/*<img src={cocktail.strDrinkThumb} className={classes.cocktailImage} alt="cocktail"/>*/}
+                        <img src={pokemon.drink.image} className={classes.cocktailImage} alt="cocktail"/>
                         <Text align="center" size={"sm"} className={classes.text}>{pokemon.drink.name}</Text>
                     </Flex>
                 </Flex>
