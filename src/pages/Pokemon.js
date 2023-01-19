@@ -43,7 +43,14 @@ const Pokemon = () => {
     const [pokemons, setPokemons] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/pokemons")
+        fetch("http://localhost:3000/api/pokemons", {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'email' : window.sessionStorage.getItem('userEmail'),
+                'authorization' : window.sessionStorage.getItem('userToken')
+            }
+        })
             .then((res) => {
                 return res.json();
             })

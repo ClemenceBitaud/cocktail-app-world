@@ -9,10 +9,15 @@ import Cocktail from "./pages/Cocktail";
 import Favorite from "./pages/Favorite";
 import Random from "./pages/Random";
 import Pokemon from "./pages/Pokemon";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Login/>
+  },
+  {
+    path: "/home",
     element: <Home/>
   },
   {

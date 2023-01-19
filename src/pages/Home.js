@@ -69,7 +69,14 @@ const Home = () => {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/drinks")
+        fetch("http://localhost:3000/api/drinks", {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'email' : window.sessionStorage.getItem('userEmail'),
+                'authorization' : window.sessionStorage.getItem('userToken')
+            }
+        })
             .then((res) => {
                 return res.json();
             })

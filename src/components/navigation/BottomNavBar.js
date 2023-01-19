@@ -53,7 +53,7 @@ const linksMockdata = [
     {
         label:'Home',
         icon: HomeIcon,
-        linkTo: '/'
+        linkTo: '/home'
     },
     {
         label:'Cocktail',

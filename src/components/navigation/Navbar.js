@@ -36,7 +36,7 @@ const useStyles = createStyles((theme) => ({
 const linksMockdata = [
     {
         label:'Home',
-        linkTo: '/'
+        linkTo: '/home'
     },
     {
         label:'Cocktail',

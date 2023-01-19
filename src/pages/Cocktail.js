@@ -43,7 +43,14 @@ const Cocktail = () => {
             setIsLoaded(true);
 
         }else{
-            fetch(`http://localhost:3000/api/drinks/search/${search}`)
+            fetch(`http://localhost:3000/api/drinks/search/${search}`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'email' : window.sessionStorage.getItem('userEmail'),
+                    'authorization' : window.sessionStorage.getItem('userToken')
+                }
+            })
                 .then((res) => {
                     return res.json();
                 })
