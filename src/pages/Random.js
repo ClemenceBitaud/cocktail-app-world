@@ -52,12 +52,19 @@ const Random = () => {
 
     const handleRandomApi = () => {
         setCocktail({});
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+        fetch('http://localhost:3000/api/drinks/random/find', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'email' : window.sessionStorage.getItem('userEmail'),
+                'authorization' : window.sessionStorage.getItem('userToken')
+            }
+        })
             .then((res) => {
                 return res.json();
             })
             .then((data) => {
-                setCocktail(data.drinks[0]);
+                setCocktail(data);
             }, (error) => {
                 console.log(error)
             });
