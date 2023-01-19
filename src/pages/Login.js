@@ -1,4 +1,4 @@
-import {createStyles, Flex, TextInput, Modal} from "@mantine/core";
+import {createStyles, Flex, TextInput, Modal, Text} from "@mantine/core";
 import '../components/item/TextInput.css';
 import {useState} from "react";
 import RetroButton from "../components/button/RetroButton";
@@ -25,6 +25,10 @@ const useStyles = createStyles((theme) => ({
 
     input : {
         marginTop: theme.spacing.sm
+    },
+
+    error :{
+        color: "red"
     }
 }));
 
@@ -35,8 +39,8 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [opened, setOpened] = useState(false);
-    const [successRegister, setSuccessRegister] = useState(false);
-    const [successLogin, setSuccessLogin] = useState(false);
+    const [successRegister, setSuccessRegister] = useState(true);
+    const [successLogin, setSuccessLogin] = useState(true);
     const navigate = useNavigate();
 
     const login = () => {
@@ -55,7 +59,6 @@ const Login = () => {
                 window.sessionStorage.setItem('userEmail', user.email);
                 window.sessionStorage.setItem('userToken', token);
                 navigate("/home");
-                setSuccessLogin(true);
             })
             .catch((error) => {
                 console.log(error);
@@ -77,11 +80,10 @@ const Login = () => {
             .then(response => response.json())
             .then(response => {
                 setOpened(false);
-                setSuccessRegister(true);
             })
             .catch((error) => {
                 console.log(error);
-                setOpened(false);
+                setSuccessRegister(false);
             })
     }
 
@@ -106,6 +108,7 @@ const Login = () => {
                     variant="filled"
                     onChange={(event) => setPassword(event.target.value)}
                 />
+                {!successLogin && <Text className={classes.error}>Email or password incorect</Text>}
                 <Flex justify="space-evenly">
                     <RetroButton label={"Login"} handleClick={login}/>
                     <RetroButton label={"Register"} handleClick={() =>{setOpened(true)}}/>
@@ -123,6 +126,7 @@ const Login = () => {
                         radius={20}
                         aria-label="Name"
                         variant="filled"
+                        required
                         onChange={(event) => setName(event.target.value)}
                     />
                     <TextInput
@@ -132,6 +136,7 @@ const Login = () => {
                         radius={20}
                         aria-label="Email"
                         variant="filled"
+                        required
                         onChange={(event) => setEmail(event.target.value)}
                     />
                     <TextInput
@@ -141,8 +146,10 @@ const Login = () => {
                         radius={20}
                         aria-label="Password"
                         variant="filled"
+                        required
                         onChange={(event) => setPassword(event.target.value)}
                     />
+                    {!successRegister && <Text className={classes.error}>Something went wrong, please try again</Text>}
                     <Flex justify="space-evenly">
                         <RetroButton label={"Register"} handleClick={register}/>
                     </Flex>
