@@ -47,7 +47,7 @@ const linksMockdata = [
         linkTo: '/favorite'
     },
     {
-        label: 'Aléatoir',
+        label: 'Aléatoire',
         linkTo: '/random'
     },
     {

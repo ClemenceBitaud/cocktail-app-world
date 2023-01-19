@@ -50,7 +50,7 @@ const Random = () => {
 
     const { classes} = useStyles();
     const {width, height} = useWindowDimensions();
-    const activeLink = "Random";
+    const activeLink = "Aléatoire";
     const [cocktail, setCocktail] = useState({});
 
     useEffect(() => {

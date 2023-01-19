@@ -30,7 +30,7 @@ const Favorite = () => {
     const { classes} = useStyles();
     const {width, height} = useWindowDimensions();
     const [cocktails, setCocktails] = useState([]);
-    const activeLink = "Favorite";
+    const activeLink = "Favoris";
     const userId = window.sessionStorage.getItem('userId');
 
     useEffect(() => {
