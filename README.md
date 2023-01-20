@@ -1,7 +1,5 @@
 #Welcome in Cocktail World
 
-Website url : https://main--graceful-blini-ba83d5.netlify.app/
-
 ##Description
 
 On the homepage you will find a cocktail list. You can click on "see more" to be redirected to the "Cocktail" page and see more cocktails.
